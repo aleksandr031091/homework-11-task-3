@@ -29,16 +29,16 @@ class CountdownTimer {
     refs.secs.innerHTML = secs;
   }
 
-  date() {
+  setCountDownTimer() {
     const currentDate = new Date();
     let time = this.targetDate - currentDate;
     this.countingTime(time);
   }
 
   start() {
-    this.date();
+    this.setCountDownTimer();
     setInterval(() => {
-      this.date();
+      this.setCountDownTimer();
     }, 1000);
   }
 }
@@ -47,6 +47,7 @@ const timer = new CountdownTimer({
   selector: "#timer-1",
   targetDate: new Date("Jul 17, 2021"),
 });
+
 timer.start();
 // Для подсчета значений используй следующие готовые формулы, где time - разница между targetDate и текущей датой.
 
